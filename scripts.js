@@ -8,17 +8,17 @@ document.addEventListener("DOMContentLoaded", function () {
     resizePage();
 
     document.getElementById("1").addEventListener("mouseover", function () {
-        document.getElementById("mcluhan").style.opacity = "100%";
+        document.getElementById("postman").style.opacity = "100%";
     });
     document.getElementById("1").addEventListener("mouseout", function () {
-        document.getElementById("mcluhan").style.opacity = "0";
+        document.getElementById("postman").style.opacity = "0";
     });
 
     document.getElementById("2").addEventListener("mouseover", function () {
-        document.getElementById("postman").style.opacity = "100%";
+        document.getElementById("mcluhan").style.opacity = "100%";
     });
     document.getElementById("2").addEventListener("mouseout", function () {
-        document.getElementById("postman").style.opacity = "0";
+        document.getElementById("mcluhan").style.opacity = "0";
     });
 
     document.getElementById("3").addEventListener("mouseover", function () {
@@ -42,10 +42,10 @@ function resizePage () {
     document.getElementById("3").setAttribute("coords", `0,${areaHeight*2},${imageWidth},${areaHeight*3}`);
 
     // Resize text boxes
-    document.getElementById("mcluhan").style.width = `calc(${(screenWidth - imageWidth)/2}px - 4rem)`;
-    document.getElementById("mcluhan").style.top = `calc(${screenHeight*0.125 + areaHeight*0.5}px + 1rem)`;
     document.getElementById("postman").style.width = `calc(${(screenWidth - imageWidth)/2}px - 4rem)`;
-    document.getElementById("postman").style.top = `calc(${screenHeight*0.125 + areaHeight*1.5}px)`;
+    document.getElementById("postman").style.top = `calc(${screenHeight*0.125}px + 1rem)`;
+    document.getElementById("mcluhan").style.width = `calc(${(screenWidth - imageWidth)/2}px - 4rem)`;
+    document.getElementById("mcluhan").style.top = `calc(${screenHeight*0.125 + areaHeight*1.5}px)`;
     document.getElementById("debord").style.width = `calc(${(screenWidth - imageWidth)/2}px - 4rem)`;
-    document.getElementById("debord").style.top = `calc(${screenHeight*0.125 + areaHeight*2.5}px - 1rem)`;
+    document.getElementById("debord").style.bottom = `calc(${screenHeight*0.125}px + 1rem)`;
 }

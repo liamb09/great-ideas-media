@@ -11,15 +11,24 @@ html {
     scroll-behavior: smooth;
     background-color: var(--background);
     margin: 0;
+    font-size: 13px;
+}
+
+#title-container {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+}
+
+.general-text {
+    width: 45vw;
 }
 
 #title {
     font-size: var(--title-text-size);
-    position: fixed;
-    top: 1rem;
-    margin: auto;
-    left: 50%;
-    transform: translate(-50%, 0);
+    margin: 0;
 }
 
 #duolingo-pic {
@@ -57,34 +66,50 @@ area:hover {
 
 p {
     margin: 0;
+    font-size: var(--p-text-size);
 }
 
-#mcluhan, #debord {
+#postman, #debord, #mcluhan {
     position: fixed;
-    left: 2rem;
-    transform: translate(0, -50%);
     opacity: 0;
     transition: all 0.4s;
     padding: 1rem;
-    padding-right: 3rem;
     background-color: #FF4B4B;
     z-index: -1;
     border-radius: 16px;
     box-shadow: 0 0 25px #204d00;
-    font-size: var(--p-text-size);
 }
 
-#postman {
-    position: fixed;
+#postman, #debord {
+    padding-right: 3rem;
+    left: 2rem;
+}
+
+#mcluhan {
+    padding-left: 3rem;
     right: 2rem;
     transform: translate(0, -50%);
-    opacity: 0;
-    transition: all 0.4s;
-    padding: 1rem;
-    padding-left: 3rem;
-    z-index: -1;
-    border-radius: 16px;
-    background-color: #FF4B4B;
-    box-shadow: 0 0 25px #204d00;
-    font-size: var(--p-text-size);
+}
+
+#instructions {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+}
+
+@media only screen and (max-width: 1615px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+    html {
+        font-size: 11px;
+    }
+    .general-text {
+        width: 50vw;
+    }
 }
