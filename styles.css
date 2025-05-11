@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 :root {
-    --background: #58cc02;
+    --background: #ffe480;
+    --primary: #ff9600;
     --title-text-size: 2rem;
     --p-text-size: 1.25rem;
 }
@@ -14,12 +15,42 @@ html {
     font-size: 13px;
 }
 
+#streak-container {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    display: fixed;
+}
+
+#streak-flexbox {
+    display: flex;
+    align-items: center;
+}
+
+.streak-image {
+    width: 3rem;
+}
+
+#streak-live {
+    opacity: 0;
+    z-index: 1;
+    transition: all 1s;
+    position: absolute;
+}
+
+#streak-num {
+    margin: 0;
+    margin-left: 0.5rem;
+    font-size: 3rem;
+}
+
 #title-container {
     position: fixed;
     top: 1rem;
     left: 50%;
     transform: translate(-50%, 0);
     text-align: center;
+    z-index: 2;
 }
 
 .general-text {
@@ -52,7 +83,7 @@ html {
 }
 
 #img-container:hover {
-    box-shadow: 0 0 25px #204d00;
+    box-shadow: 0 0 25px #999999;
 }
 
 map {
@@ -74,11 +105,16 @@ p {
     opacity: 0;
     transition: all 0.4s;
     padding: 1rem;
-    background-color: #FF4B4B;
+    background-color: var(--primary);
     z-index: -1;
     border-radius: 16px;
-    box-shadow: 0 0 25px #204d00;
+    box-shadow: 0 0 25px var(--primary);
+    pointer-events: none;
 }
+
+/* #postman:hover, #debord:hover, #mcluhan:hover {
+    opacity: 1;
+} */
 
 #postman, #debord {
     padding-right: 3rem;
@@ -99,17 +135,77 @@ p {
     text-align: center;
 }
 
-@media only screen and (max-width: 1615px) {
+/* @media only screen and (min-width: 1725px) {
+    html {
+        font-size: 14px;
+    }
+} */
+
+@media only screen and (max-width: 1700px) {
     html {
         font-size: 12px;
     }
 }
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1525px) {
     html {
         font-size: 11px;
     }
     .general-text {
         width: 50vw;
+    }
+}
+
+@media only screen and (max-width: 1425px) {
+    html {
+        font-size: 10px;
+    }
+    .general-text {
+        width: 50vw;
+    }
+}
+
+@media only screen and (max-width: 1375px) {
+    html {
+        font-size: 9px;
+    }
+    .general-text {
+        width: 55vw;
+    }
+}
+
+@media only screen and (max-width: 1275px) {
+    html {
+        font-size: 8px;
+    }
+    .general-text {
+        width: 55vw;
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+    html {
+        font-size: 8px;
+    }
+    .general-text {
+        width: 55vw;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    html {
+        font-size: 8px;
+    }
+    .general-text {
+        width: 60vw;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    html {
+        font-size: 7px;
+    }
+    .general-text {
+        width: 65vw;
     }
 }

@@ -3,10 +3,10 @@ var screenWidth;
 var imageWidth;
 var areaHeight;
 
-// Resize image on page load or resize
 document.addEventListener("DOMContentLoaded", function () {
     resizePage();
 
+    // Setup hover actions for text
     document.getElementById("1").addEventListener("mouseover", function () {
         document.getElementById("postman").style.opacity = "100%";
     });
@@ -27,6 +27,26 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("3").addEventListener("mouseout", function () {
         document.getElementById("debord").style.opacity = "0";
     });
+
+    // Setup streak
+    const streakStart = localStorage.getItem("greatIdeasMediaStreakStart");
+    const daysSinceEpoch = Math.floor(Date.now()/1000/60/60/24);
+    if (streakStart === null) {
+        localStorage.setItem("greatIdeasMediaStreakStart", daysSinceEpoch);
+    }
+    var currentStreak;
+    if (parseInt(localStorage.getItem("greatIdeasMediaStreakLast")) + 1 >= daysSinceEpoch) {
+        currentStreak = daysSinceEpoch - parseInt(localStorage.getItem("greatIdeasMediaStreakStart")) + 1;
+    } else {
+        localStorage.setItem("greatIdeasMediaStreakStart", daysSinceEpoch);
+        currentStreak = 1;
+    }
+    localStorage.setItem("greatIdeasMediaStreakLast", daysSinceEpoch);
+    document.getElementById("streak-live").style.opacity = "1";
+    document.getElementById("streak-num").innerHTML = currentStreak-1;
+    setTimeout(function () {
+        document.getElementById("streak-num").innerHTML = currentStreak;
+    }, 1000);
 });
 window.addEventListener('resize', resizePage);
 
